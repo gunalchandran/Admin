@@ -142,7 +142,7 @@ const ProductList = () => {
 
   const handleRazorpayPayment = (orderData, amount) => {
     const options = {
-      key:process.env.REACT_APP_RAZORPAY_KEY_ID , // Replace with your Razorpay Key ID
+      key:rzp_test_4rdgre6savrrmw,
       amount: amount * 100, // Amount in paise
       currency: "INR",
       name: "Christal SuperMarket",
