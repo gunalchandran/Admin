@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-glow-float {
+    animation: glow-float 3s ease-in-out infinite;
+  }
+
+  @keyframes glow-float {
+    0%, 100% {
+      transform: translateY(0);
+      filter: drop-shadow(0 0 5px #22c55e);
+    }
+    50% {
+      transform: translateY(-10px);
+      filter: drop-shadow(0 0 20px #16a34a);
+    }
+  }
+}

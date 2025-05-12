@@ -1,0 +1,49 @@
+.order-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.order-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.order-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.order-details {
+  margin-top: 10px;
+}
+
+.order-details h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.order-details p {
+  margin: 5px 0;
+}
+
+button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
