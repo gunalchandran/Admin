@@ -11,7 +11,7 @@ const Chatbox = () => {
     const newMessage = { type: "user", text: input };
     setMessages([...messages, newMessage]);
 
-    const res = await axios.post("http://localhost:5000/chatbox", { message: input });
+    const res = await axios.post("https://consultancy-backend-9y9a.onrender.com/chatbox", { message: input });
     setMessages(prev => [...prev, { type: "bot", text: res.data.response }]);
     setInput("");
   };

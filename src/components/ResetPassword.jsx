@@ -10,7 +10,7 @@ const ResetPassword = () => {
   const handleReset = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/reset-password", {
+      const res = await axios.post("https://consultancy-backend-9y9a.onrender.com/reset-password", {
         email,
         otp,
         new_password: newPassword,

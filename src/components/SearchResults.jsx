@@ -13,7 +13,7 @@ const SearchResults = () => {
   useEffect(() => {
   // Fetch all products from the backend
   axios
-    .get("http://localhost:5000/products")
+    .get("https://consultancy-backend-9y9a.onrender.com/products")
     .then((res) => {
       console.log("All Products:", res.data); // Log all products
       setProducts(res.data);

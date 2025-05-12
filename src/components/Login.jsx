@@ -15,7 +15,7 @@ const Login = () => {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/login", { email, password });
+      const res = await axios.post("https://consultancy-backend-9y9a.onrender.com/login", { email, password });
 
       if (res.data.token && res.data.role) {
         localStorage.setItem("token", res.data.token);

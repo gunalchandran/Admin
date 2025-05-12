@@ -23,7 +23,7 @@ const ProductManagement = () => {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/products");
+      const res = await axios.get("https://consultancy-backend-9y9a.onrender.com/products");
       setProducts(res.data);
     } catch (err) {
       setError("Failed to fetch products.");
@@ -64,11 +64,11 @@ const ProductManagement = () => {
 
     try {
       if (editProduct) {
-        await axios.put(`http://localhost:5000/products/${editProduct._id}`, formData, {
+        await axios.put(`https://consultancy-backend-9y9a.onrender.com/products/${editProduct._id}`, formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
       } else {
-        await axios.post("http://localhost:5000/products", formData, {
+        await axios.post("https://consultancy-backend-9y9a.onrender.com/products", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
       }
@@ -83,7 +83,7 @@ const ProductManagement = () => {
   const deleteProduct = async (id) => {
     setLoading(true);
     try {
-      await axios.delete(`http://localhost:5000/products/${id}`);
+      await axios.delete(`https://consultancy-backend-9y9a.onrender.com/products/${id}`);
       fetchProducts();
     } catch (err) {
       setError("Failed to delete product.");

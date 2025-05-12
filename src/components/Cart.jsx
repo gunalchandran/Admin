@@ -13,7 +13,7 @@ const Cart = () => {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/cart?email=${userEmail}`);
+      const res = await axios.get(`https://consultancy-backend-9y9a.onrender.com/cart?email=${userEmail}`);
       setCartItems(res.data);
     } catch (err) {
       console.error("Error fetching cart:", err);
@@ -29,7 +29,7 @@ const Cart = () => {
   const updateQuantity = async (itemId, newQuantity) => {
     try {
       if (newQuantity < 1) return;
-      await axios.put(`http://localhost:5000/cart/${itemId}`, { quantity: newQuantity });
+      await axios.put(`https://consultancy-backend-9y9a.onrender.com/cart/${itemId}`, { quantity: newQuantity });
       fetchCart();
     } catch (err) {
       console.error("Error updating quantity:", err);
@@ -38,7 +38,7 @@ const Cart = () => {
 
   const removeItem = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:5000/cart/${itemId}`);
+      await axios.delete(`https://consultancy-backend-9y9a.onrender.com/cart/${itemId}`);
       fetchCart();
     } catch (err) {
       console.error("Error removing item:", err);
@@ -47,7 +47,7 @@ const Cart = () => {
 
   const clearCart = async () => {
     try {
-      await axios.delete(`http://localhost:5000/cart?email=${userEmail}`);
+      await axios.delete(`https://consultancy-backend-9y9a.onrender.com/cart?email=${userEmail}`);
       fetchCart();
     } catch (err) {
       console.error("Error clearing cart:", err);
@@ -97,7 +97,7 @@ const Cart = () => {
 
     if (method.toLowerCase() === "cod") {
       try {
-        await axios.post("http://localhost:5000/orders/bulk", { orders });
+        await axios.post("https://consultancy-backend-9y9a.onrender.com/orders/bulk", { orders });
         alert("Order placed successfully with Cash on Delivery!");
         clearCart();
       } catch (err) {
@@ -111,7 +111,7 @@ const Cart = () => {
 
       script.onload = async () => {
         try {
-          const { data: order } = await axios.post("http://localhost:5000/create-order", {
+          const { data: order } = await axios.post("https://consultancy-backend-9y9a.onrender.com/create-order", {
             amount: total * 100, // in paisa
           });
 
@@ -124,7 +124,7 @@ const Cart = () => {
             order_id: order.id,
             handler: async function (response) {
               try {
-                await axios.post("http://localhost:5000/orders/bulk", { orders });
+                await axios.post("https://consultancy-backend-9y9a.onrender.com/orders/bulk", { orders });
                 alert("Payment successful and order placed!");
                 clearCart();
               } catch (error) {
@@ -180,7 +180,7 @@ const Cart = () => {
                         ? item.image_url
                         : item.image?.startsWith("http")
                         ? item.image
-                        : `http://localhost:5000/${item.image}`
+                        : `https://consultancy-backend-9y9a.onrender.com/${item.image}`
                     }
                     alt={item.product_name}
                     onError={(e) => {

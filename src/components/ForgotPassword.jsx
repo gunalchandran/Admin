@@ -8,7 +8,7 @@ const ForgotPassword = () => {
   const handleSendOTP = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/forgot-password", { email });
+      const res = await axios.post("https://consultancy-backend-9y9a.onrender.com/forgot-password", { email });
       setMessage(res.data.message);
     } catch (err) {
       setMessage(err.response?.data?.error || "Something went wrong");

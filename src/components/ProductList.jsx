@@ -16,7 +16,7 @@ const ProductList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://consultancy-backend-9y9a.onrender.com/products")
       .then((res) => {
         setProducts(res.data);
         const initialLikes = {};
@@ -55,7 +55,7 @@ const ProductList = () => {
     };
 
     try {
-      await axios.post("http://localhost:5000/cart", cartItem);
+      await axios.post("https://consultancy-backend-9y9a.onrender.com/cart", cartItem);
       alert("Product added to cart successfully.");
     } catch (error) {
       console.error("Error adding to cart:", error);
@@ -130,7 +130,7 @@ const ProductList = () => {
       handleRazorpayPayment(orderData, product.price * quantity);
     } else {
       try {
-        await axios.post("http://localhost:5000/order", orderData);
+        await axios.post("https://consultancy-backend-9y9a.onrender.com/order", orderData);
         alert("Order placed successfully!");
         setShowForm(false);
       } catch (error) {
@@ -151,7 +151,7 @@ const ProductList = () => {
         try {
           // Mark payment as successful and place the order
           orderData.payment_status = "Paid";
-          await axios.post("http://localhost:5000/order", orderData);
+          await axios.post("https://consultancy-backend-9y9a.onrender.com/order", orderData);
           alert("Payment successful and order placed!");
           setShowForm(false);
         } catch (error) {

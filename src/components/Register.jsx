@@ -15,7 +15,7 @@ const Register = () => {
     setError("");
 
     try {
-      await axios.post("http://localhost:5000/register", { name, email, password, role });
+      await axios.post("https://consultancy-backend-9y9a.onrender.com/register", { name, email, password, role });
       alert("Registration successful! Please login.");
       navigate("/login");
     } catch (err) {

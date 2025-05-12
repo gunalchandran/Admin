@@ -11,7 +11,7 @@ const Analysis = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/admin/orders")
+    axios.get("https://consultancy-backend-9y9a.onrender.com/admin/orders")
       .then(res => setOrders(res.data))
       .catch(err => console.error("Error fetching admin orders:", err));
   }, []);

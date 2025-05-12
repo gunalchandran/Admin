@@ -11,7 +11,7 @@ const Admin = () => {
     const fetchData = async () => {
       try {
         const password = "admin"; // Hardcoded for simplicity
-        const orderRes = await axios.get(`http://localhost:5000/order-history?password=${password}`);
+        const orderRes = await axios.get(`https://consultancy-backend-9y9a.onrender.com/order-history?password=${password}`);
 
         console.log("Orders:", orderRes.data);
         setOrders(orderRes.data);
@@ -29,7 +29,7 @@ const Admin = () => {
   const updateOrderStatus = async (orderId, paymentStatus, deliveryStatus) => {
     try {
       // Send the update request to the server
-      await axios.put(`http://localhost:5000/orders/${orderId}`, {
+      await axios.put(`https://consultancy-backend-9y9a.onrender.com/orders/${orderId}`, {
         payment_status: paymentStatus, // Keep the current payment status
         delivery_status: deliveryStatus, // Update only the delivery status
       });

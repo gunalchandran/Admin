@@ -13,7 +13,7 @@ const BillingPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://consultancy-backend-9y9a.onrender.com/products")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error("Failed to fetch products", err));
   }, []);
@@ -48,7 +48,7 @@ const BillingPage = () => {
   const generatePDF = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/generate-bill",
+        "https://consultancy-backend-9y9a.onrender.com/generate-bill",
         { items: cart },
         { responseType: "blob" }
       );

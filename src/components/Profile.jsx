@@ -16,7 +16,7 @@ const Profile = () => {
 
       // Fetch profile data from backend
       axios
-        .get(`http://localhost:5000/get-profile?email=${storedEmail}`)
+        .get(`https://consultancy-backend-9y9a.onrender.com/get-profile?email=${storedEmail}`)
         .then((res) => {
           // If the response contains the name and phone
           if (res.data.name) {
@@ -58,7 +58,7 @@ const Profile = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:5000/update-profile", formData, {
+      const res = await axios.post("https://consultancy-backend-9y9a.onrender.com/update-profile", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

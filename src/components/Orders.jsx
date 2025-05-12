@@ -13,7 +13,7 @@ const Orders = () => {
       return;
     }
 
-    axios.get(`http://localhost:5000/order-history?email=${userEmail}`)
+    axios.get(`https://consultancy-backend-9y9a.onrender.com/order-history?email=${userEmail}`)
       .then(response => {
         setOrders(response.data);
       })
@@ -29,7 +29,7 @@ const Orders = () => {
       return;
     }
 
-    axios.delete(`http://localhost:5000/cancel-order/${orderId}?email=${userEmail}`)
+    axios.delete(`https://consultancy-backend-9y9a.onrender.com/cancel-order/${orderId}?email=${userEmail}`)
       .then(response => {
         alert("Order canceled successfully");
         setOrders(orders.filter(order => order._id !== orderId));
