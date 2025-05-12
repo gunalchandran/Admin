@@ -78,7 +78,7 @@ const Login = () => {
           />
           <h2 className="text-3xl font-bold text-green-800 mt-4">Welcome to Porto</h2>
           <p className="text-gray-600 text-center mt-2 px-6">
-            Smart and easy crop disease prediction for farmers
+            Christal supermarket Fast !!
           </p>
         </div>
 
