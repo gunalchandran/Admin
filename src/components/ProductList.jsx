@@ -142,7 +142,7 @@ const ProductList = () => {
 
   const handleRazorpayPayment = (orderData, amount) => {
     const options = {
-      key:rzp_test_4rdgre6savrrmw,
+      key:"rzp_test_4rdgre6savrrmw",
       amount: amount * 100, // Amount in paise
       currency: "INR",
       name: "Christal SuperMarket",
